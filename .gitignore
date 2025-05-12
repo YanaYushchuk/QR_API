@@ -1,0 +1,68 @@
+## Ignore build results
+[Bb]in/
+[Oo]bj/
+out/
+
+## Rider settings
+.idea/
+*.sln.iml
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Logs
+*.log
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## NuGet packages
+*.nupkg
+# The packages folder can be ignored if you're using PackageReference
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+## Resharper / Rider
+*.DotSettings.user
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Visual Studio cache/options
+.vs/
+.vscode/
+
+## Build results
+*.dll
+*.exe
+*.app
+*.cache
+*.pdb
+
+## Test results
+*.TestResults/
+*.vspscc
+*.vssscc
+*.publish/
+
+## Temporary files
+~$*
+*.tmp
+
+## Entity Framework
+Migrations/
+
+## Rider run configurations
+.idea/.idea.*
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+
+## Local config files
+appsettings.*.json
+secrets.json
