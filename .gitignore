@@ -54,9 +54,6 @@ ScaffoldingReadMe.txt
 ~$*
 *.tmp
 
-## Entity Framework
-Migrations/
-
 ## Rider run configurations
 .idea/.idea.*
 .idea/workspace.xml
