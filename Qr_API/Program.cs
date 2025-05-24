@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Qr_API;
 using Qr_API.DbContext;
+using Qr_API.Queries;
 using Qr_API.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,12 @@ app.MapPost("/api/qr", async (QrRequest request, IMediator mediator) =>
 {
     var result = await mediator.Send(new ProcessQrCommand(request));
     return Results.Ok(result);
+});
+
+app.MapGet("/api/qr/{id:int}", async (int id, IMediator mediator) =>
+{
+    var qr = await mediator.Send(new GetQrByIdQuery(id));
+    return qr is not null ? Results.Ok(qr) : Results.NotFound();
 });
 
 app.Run();

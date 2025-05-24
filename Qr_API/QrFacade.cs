@@ -7,6 +7,7 @@ namespace Qr_API;
 public interface IQrFacade
 {
     Task<QrResult> ProcessQr(QrRequest request);
+    Task<QrCode> GetQrById(int id);
 }
 
 public class QrFacade : IQrFacade
@@ -25,5 +26,10 @@ public class QrFacade : IQrFacade
         _db.QrCodes.Add(new QrCode { Data = request.Data, Processed = result.Success });
         await _db.SaveChangesAsync();
         return result;
+    }
+
+    public async Task<QrCode> GetQrById(int id)
+    {
+        return await _db.QrCodes.FindAsync(id);
     }
 }
